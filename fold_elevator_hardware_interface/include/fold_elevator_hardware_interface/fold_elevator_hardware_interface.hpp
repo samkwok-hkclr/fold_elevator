@@ -40,6 +40,17 @@ using std::placeholders::_1;
 using std::placeholders::_2;
 using std::placeholders::_3;
 
+#define READ_PID(GETTER, FIELD)                              \
+  value = 0;                                                 \
+  motor_status = motorDriver_->GETTER(can_id, value);        \
+  if (motor_status != Ti5RobotCRADriverStatus::SUCCESS) {    \
+    RCLCPP_ERROR(logger_, "Error (%d) in calling " #GETTER "(0x%x)", motor_status, can_id); \
+    can_error = true;                                        \
+  } else {                                                   \
+    FIELD = value;                                           \
+  }                                                          \
+  if (can_error) break;
+
 namespace fold_elevator_hardware_interface {
 
 // 电机参数结构

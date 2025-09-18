@@ -1,17 +1,6 @@
 #include "fold_elevator_hardware_interface/fold_elevator_hardware_interface.hpp"
 #include "fold_elevator_hardware_interface/Ti5Robot_cra_driver.hpp"
 
-#define READ_PID(GETTER, FIELD)                              \
-  value = 0;                                                 \
-  motor_status = motorDriver_->GETTER(can_id, value);        \
-  if (motor_status != Ti5RobotCRADriverStatus::SUCCESS) {    \
-    RCLCPP_ERROR(logger_, "Error (%d) in calling " #GETTER "(0x%x)", motor_status, can_id); \
-    can_error = true;                                        \
-  } else {                                                   \
-    FIELD = value;                                           \
-  }                                                          \
-  if (can_error) break;
-
 namespace fold_elevator_hardware_interface {
 
 FoldElevatorHardwareInterface::FoldElevatorHardwareInterface() 
@@ -416,7 +405,7 @@ FoldElevatorHardwareInterface::read(const rclcpp::Time& time, const rclcpp::Dura
         can_error = 1;
         break;
       } 
-      status_msg.velocity = static_cast<float>(value);
+      status_msg.velocity = velocity_convention(static_cast<float>(value), index);
       
       value = 0;
       motor_status = motorDriver_->getCurrent(can_id, value);
