@@ -427,9 +427,13 @@ FoldElevatorHardwareInterface::read(const rclcpp::Time& time, const rclcpp::Dura
         break;
       } 
       status_msg.current = static_cast<float>(value) / 1000.0f;
-      status_msg.position_cmd = hw_position_commands_[index];
-      status_msg.velocity_cmd = hw_velocity_commands_[index];
-      status_msg.current_cmd = hw_effort_commands_[index];
+
+      if (supports_position_command_[index] && !std::isnan(hw_position_commands_[index])) 
+      {
+        status_msg.position_cmd = position_inverse_convention(hw_position_commands_[index]);
+      }
+      // status_msg.velocity_cmd = hw_velocity_commands_[index];
+      // status_msg.current_cmd = hw_effort_commands_[index];
 
       status_pubs_[can_id]->publish(status_msg);
       RCLCPP_DEBUG_THROTTLE(logger_, *node_->get_clock(), 10000, "Publishing motor status (CAN ID: 0x%x)", can_id);
