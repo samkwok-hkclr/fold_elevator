@@ -4,12 +4,12 @@
 		<ros2_control name="fold_elevator" type="system">
 			<hardware>
 				<xacro:if value="${sim}">
-				<plugin>mock_components/GenericSystem</plugin>
+					<plugin>mock_components/GenericSystem</plugin>
 				</xacro:if>
 				<xacro:unless value="${sim}">
-				<plugin>fold_elevator_hardware_interface/FoldElevatorHardwareInterface</plugin>
-				<param name="can_interface">${can_interface}</param>
-				<param name="desired_config_update_rate">${desired_config_update_rate}</param>
+					<plugin>fold_elevator_hardware_interface/FoldElevatorHardwareInterface</plugin>
+					<param name="can_interface">${can_interface}</param>
+					<param name="desired_config_update_rate">${desired_config_update_rate}</param>
 				</xacro:unless>
 			</hardware>
 

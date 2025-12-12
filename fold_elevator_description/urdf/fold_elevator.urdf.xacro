@@ -4,29 +4,34 @@
 
     <link name="${name}_base_link">
       <inertial>
-        <origin xyz="0.049999 0.056993 0.075571" rpy="0 0 0" />
-        <mass value="0.6213" />
+        <origin
+          xyz="0.0891357515039702 -0.0600105188224723 0.0319343260117339"
+          rpy="0 0 0" />
+        <mass
+          value="2.26283180383215" />
         <inertia
-          ixx="0.00097836"
-          ixy="4.1808E-09"
-          ixz="1.4286E-08"
-          iyy="0.0010488"
-          iyz="-9.0552E-05"
-          izz="0.00084789" />
+          ixx="0.00682098629888102"
+          ixy="1.35383918129792E-06"
+          ixz="-0.00120985513326378"
+          iyy="0.00688180551407474"
+          iyz="-3.55019811213944E-06"
+          izz="0.00613738161557863" />
       </inertial>
+
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://fold_elevator_description/meshes/visual/base_link.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="package://fold_elevator_description/meshes/visual/base_link.STL" />
         </geometry>
         <material name="">
-          <color rgba="0.72941 0.74902 0.74902 1.0" />
+          <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
         </material>
       </visual>
+
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://fold_elevator_description/meshes/collision/base_link.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="package://fold_elevator_description/meshes/collision/base_link.STL" />
         </geometry>
       </collision>
     </link>
@@ -40,38 +45,43 @@
 
     <link name="link1">
       <inertial>
-        <origin xyz="6.9932E-07 0.24068 -0.05991" rpy="0 0 0" />
-        <mass value="0.76492" />
+        <origin
+          xyz="0.150849204106985 -9.1876604810387E-06 -0.0581278906888667"
+          rpy="0 0 0" />
+        <mass
+          value="2.976039924942" />
         <inertia
-          ixx="0.0065309"
-          ixy="3.0624E-09"
-          ixz="-2.2651E-08"
-          iyy="0.00090992"
-          iyz="6.7991E-05"
-          izz="0.0064905" />
+          ixx="0.00314898163070912"
+          ixy="1.59802506736583E-06"
+          ixz="-0.00103470671766679"
+          iyy="0.0456464411263901"
+          iyz="-2.66237977525087E-06"
+          izz="0.0473958313229646" />
       </inertial>
+      
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://fold_elevator_description/meshes/visual/link1.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="package://fold_elevator_description/meshes/visual/link1.STL" />
         </geometry>
         <material name="">
-          <color rgba="0.72941 0.74902 0.74902 1" />
+          <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
         </material>
       </visual>
+
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://fold_elevator_description/meshes/collision/link1.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="package://fold_elevator_description/meshes/collision/link1.STL" />
         </geometry>
       </collision>
     </link>
 
     <joint name="joint1" type="revolute">
-      <origin xyz="0.05 -0.0104 0.1045" rpy="1.57079632679 0 0" />
+      <origin xyz="0.054623 -0.06 0.105" rpy="1.57079632679 -1.57079632679 -1.57079632679" />
       <parent link="${name}_base_link" />
       <child link="link1" />
-      <axis xyz="0 0 -1" />
+      <axis xyz="0 0 1" />
       <limit
         lower="0"
         upper="1.1344640138"
@@ -81,38 +91,43 @@
 
     <link name="link2">
       <inertial>
-        <origin xyz="-0.00019459 0.23103 -0.088288" rpy="0 0 0" />
-        <mass value="0.77213" />
+        <origin
+          xyz="0.161224779586109 8.26876809245647E-06 -0.00983121345856443"
+          rpy="0 0 0" />
+        <mass
+          value="0.393142489079521" />
         <inertia
-          ixx="0.0065937"
-          ixy="-2.2207E-08"
-          ixz="1.5389E-07"
-          iyy="0.00054292"
-          iyz="-2.341E-05"
-          izz="0.006827" />
+          ixx="0.000385544833741543"
+          ixy="-2.63936177834169E-09"
+          ixz="-3.85228060816533E-05"
+          iyy="0.00680577641372018"
+          iyz="-1.06477904379006E-11"
+          izz="0.00713642342666465" />
       </inertial>
+
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://fold_elevator_description/meshes/visual/link2.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="package://fold_elevator_description/meshes/visual/link2.STL" />
         </geometry>
         <material name="">
-          <color rgba="0.72941 0.74902 0.74902 1" />
+          <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
         </material>
       </visual>
+
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://fold_elevator_description/meshes/collision/link2.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="package://fold_elevator_description/meshes/collision/link2.STL" />
         </geometry>
       </collision>
     </link>
 
     <joint name="joint2" type="revolute">
-      <origin xyz="0 0.325 0.0242" rpy="0 0 0" />
+      <origin xyz="0.325 0 0" rpy="0 0 0" />
       <parent link="link1" />
       <child link="link2" />
-      <axis xyz="0 0 -1" />
+      <axis xyz="0 0 1" />
       <limit
         lower="-2.7925268032"
         upper="2.7925268032"
@@ -122,35 +137,40 @@
 
     <link name="link3">
       <inertial>
-        <origin xyz="-0.012564 0.064349 -0.0705" rpy="0 0 0" />
-        <mass value="0.2939" />
+        <origin
+          xyz="9.75482671417005E-07 -0.053417702239025 -0.00442438411320098"
+          rpy="0 0 0" />
+        <mass
+          value="0.236077153637359" />
         <inertia
-          ixx="0.0012875"
-          ixy="-1.4361E-05"
-          ixz="-5.9979E-07"
-          iyy="0.00054996"
-          iyz="-9.7816E-05"
-          izz="0.0011859" />
+          ixx="0.00154414234187567"
+          ixy="-3.0605171029781E-07"
+          ixz="-7.56364769224484E-08"
+          iyy="0.000440001934114007"
+          iyz="-3.94550247420016E-05"
+          izz="0.00123808020961714" />
       </inertial>
+
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://fold_elevator_description/meshes/visual/link3.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="package://fold_elevator_description/meshes/visual/link3.STL" />
         </geometry>
         <material name="">
-          <color rgba="0.69804 0.69804 0.69804 1" />
+          <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
         </material>
       </visual>
+
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://fold_elevator_description/meshes/collision/link3.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="package://fold_elevator_description/meshes/collision/link3.STL" />
         </geometry>
       </collision>
     </link>
 
     <joint name="joint3" type="revolute">
-      <origin xyz="0 0.325 0" rpy="0 0 0" />
+      <origin xyz="0.325 0 0" rpy="0 0 1.57079632679" />
       <parent link="link2" />
       <child link="link3" />
       <axis xyz="0 0 1" />
@@ -163,35 +183,40 @@
 
     <link name="link4">
       <inertial>
-        <origin xyz="1.3336E-05 -6.5521E-05 -0.0057552" rpy="0 0 0" />
-        <mass value="0.076276" />
+        <origin
+          xyz="-7.51764107198181E-05 -6.84269468244347E-06 -0.00630278043796051"
+          rpy="0 0 0" />
+        <mass
+          value="0.224129183175339" />
         <inertia
-          ixx="7.0947E-05"
-          ixy="2.2623E-08"
-          ixz="6.6182E-09"
-          iyy="7.0793E-05"
-          iyz="-4.6063E-08"
-          izz="0.00013988" />
+          ixx="0.000213048176718895"
+          ixy="-8.46287520238891E-08"
+          ixz="-1.96952804294215E-07"
+          iyy="0.000213730397858472"
+          iyz="-2.37665947796012E-08"
+          izz="0.000419496066447268" />
       </inertial>
+
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://fold_elevator_description/meshes/visual/link4.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="package://fold_elevator_description/meshes/visual/link4.STL" />
         </geometry>
         <material name="">
-          <color rgba="0.88627 0.88627 0.88627 1" />
+          <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
         </material>
       </visual>
+
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://fold_elevator_description/meshes/collision/link4.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="package://fold_elevator_description/meshes/collision/link4.STL" />
         </geometry>
       </collision>
     </link>
 
     <joint name="joint4" type="revolute">
-      <origin xyz="0 0.1687 -0.07995" rpy="-1.57079632679 0 0" />
+      <origin xyz="0 -0.172 -0.0070273" rpy="1.57079632679 1.57079632679 0" />
       <parent link="link3" />
       <child link="link4" />
       <axis xyz="0 0 1" />
